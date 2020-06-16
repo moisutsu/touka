@@ -1,14 +1,29 @@
+extern crate clap;
 extern crate image;
 
+use clap::{App, Arg};
 use image::Rgba;
 
 fn main() {
-    let args: Vec<String> = std::env::args().collect();
-    if args.len() != 2 {
-        eprintln!("[Error] Bad arguments.");
-        std::process::exit(1);
-    }
-    let mut img = image::open(&args[1]).unwrap().to_rgba();
+    let app = App::new("touka")
+        .about("Making the image background transparent.")
+        .arg(
+            Arg::with_name("input_path")
+                .help("Input image path.")
+                .required(true),
+        )
+        .arg(
+            Arg::with_name("output_path")
+                .help("Output image path.")
+                .short("o")
+                .takes_value(true),
+        );
+
+    let matches = app.get_matches();
+    let input_path = matches.value_of("input_path").unwrap();
+    let output_path = matches.value_of("output_path").unwrap_or("output");
+
+    let mut img = image::open(&input_path).unwrap().to_rgba();
     let (width, height) = img.dimensions();
     for x in 0..width {
         for y in 0..height {
@@ -19,7 +34,7 @@ fn main() {
             }
         }
     }
-    img.save("output.png").unwrap();
+    img.save(format!("{}.png", output_path)).unwrap();
 }
 
 #[allow(unused_comparisons)]
