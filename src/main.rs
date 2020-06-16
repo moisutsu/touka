@@ -3,7 +3,12 @@ extern crate image;
 use image::Rgba;
 
 fn main() {
-    let mut img = image::open("images/dog.png").unwrap().to_rgba();
+    let args: Vec<String> = std::env::args().collect();
+    if args.len() != 2 {
+        eprintln!("[Error] Bad arguments.");
+        std::process::exit(1);
+    }
+    let mut img = image::open(&args[1]).unwrap().to_rgba();
     let (width, height) = img.dimensions();
     for x in 0..width {
         for y in 0..height {
