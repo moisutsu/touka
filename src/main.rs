@@ -19,7 +19,7 @@ fn main() {
             }
         }
     }
-    img.save("images/output.png").unwrap();
+    img.save("output.png").unwrap();
 }
 
 #[allow(unused_comparisons)]
