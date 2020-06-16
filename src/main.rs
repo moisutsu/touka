@@ -1,3 +1,9 @@
+extern crate image;
+
+use image::GenericImageView;
+
 fn main() {
-    println!("Hello, world!");
+    let img = image::open("images/dog.png").unwrap();
+    let (width, height) = img.dimensions();
+    println!("{} {}", width, height);
 }
