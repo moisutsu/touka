@@ -7,6 +7,8 @@ use image::Rgba;
 fn main() {
     let app = App::new("touka")
         .about("Making the image background transparent.")
+        .version("0.2.0")
+        .author("moisutsu moisutsu@gmail.com")
         .arg(
             Arg::with_name("input_path")
                 .help("Input image path.")
