@@ -18,12 +18,14 @@ fn main() {
             Arg::with_name("output_path")
                 .help("Output image path.")
                 .short("o")
+                .long("output")
                 .takes_value(true),
         )
         .arg(
             Arg::with_name("threshold")
                 .help("A threshold to determine if a color is white.")
                 .short("t")
+                .long("threshold")
                 .takes_value(true),
         );
 
