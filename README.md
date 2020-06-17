@@ -5,8 +5,7 @@
 ## インストール方法
 
 ```bash
-git clone https://github.com/moisutsu/touka
-cargo install --path touka
+cargo install touka
 ```
 
 ## 使い方
