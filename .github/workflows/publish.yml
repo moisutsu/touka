@@ -22,5 +22,6 @@ jobs:
     - name: Run tests
       run: cargo test --verbose
     - name: Publish
-      run: cargo login "$CRATESIO_TOKEN"
-      run: cargo publish
+      run:
+        - cargo login "$CRATESIO_TOKEN"
+        - cargo publish
