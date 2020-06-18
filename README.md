@@ -12,7 +12,7 @@ cargo install touka
 
 ## 使い方・Usage
 
-背景を透過したい画像をコマンドライン引数で与えるだけで、背景を透過した画像を
+背景を透過したい画像を`touka`のコマンドライン引数で与えるだけで、背景を透過した画像を
 `output.png`として出力します。
 
 Supply an image filepath as an argument to `touka` and new version of it named
@@ -22,8 +22,7 @@ Supply an image filepath as an argument to `touka` and new version of it named
 touka path/to/image
 ```
 
-またオプションとして、画像の出力先のパス(-o)、白かどうかを判定するときに使うしき
-い値(-t)を指定できます。
+またオプションとして、`-o`を使うことで画像の出力先のパス、`-t`を使うことで白かどうかを判定するときに使うしきい値を指定できます。
 
 Use `-o` to supply a custom output name, and `-t` to control the background
 detection threshold.
