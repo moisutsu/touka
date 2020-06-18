@@ -32,7 +32,7 @@ fn main() {
     let matches = app.get_matches();
     let input_path = matches.value_of("input_path").unwrap();
     let output_path = matches.value_of("output_path").unwrap_or("output");
-    let threshold: u8 = matches
+    let threshold = matches
         .value_of("threshold")
         .unwrap_or("230")
         .parse()
