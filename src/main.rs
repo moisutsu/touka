@@ -52,7 +52,6 @@ fn main() {
     img.save(format!("{}.png", output_path)).unwrap();
 }
 
-#[allow(unused_comparisons)]
 fn is_white(r: u8, g: u8, b: u8, threshold: u8) -> bool {
-    threshold <= r && r <= 255 && threshold <= g && g <= 255 && threshold <= b && b <= 255
+    threshold <= r && threshold <= g && threshold <= b
 }
