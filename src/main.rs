@@ -43,7 +43,7 @@ fn main() {
     for x in 0..width {
         for y in 0..height {
             let pixel = img.get_pixel(x, y);
-            let (r, g, b) = (pixel[0], pixel[1], pixel[2]);
+            let &Rgba([r, g, b, _]) = pixel;
             if is_white(r, g, b, threshold) {
                 img.put_pixel(x, y, Rgba([r, g, b, 0]));
             }
