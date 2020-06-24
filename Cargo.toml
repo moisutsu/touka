@@ -1,6 +1,6 @@
 [package]
 name = "touka"
-version = "0.2.4"
+version = "0.2.5"
 authors = ["moisutsu <moisutsu@gmail.com>"]
 edition = "2018"
 license = "MIT"
