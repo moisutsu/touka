@@ -29,12 +29,14 @@ fn main() {
                 .takes_value(true),
         );
 
+    let (output, threshold) = touka::load_config_file();
+
     let matches = app.get_matches();
     let input_path = matches.value_of("input_path").unwrap();
-    let output_path = matches.value_of("output_path").unwrap_or("output");
+    let output_path = matches.value_of("output_path").unwrap_or(&output);
     let threshold = matches
         .value_of("threshold")
-        .unwrap_or("230")
+        .unwrap_or(&threshold)
         .parse()
         .unwrap();
 
