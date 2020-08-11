@@ -34,7 +34,7 @@ fn main() {
     let mut config = touka::Config::new();
     config.set_cmdline_args(matches);
 
-    let img = image::open(&config.input_path).unwrap().to_rgba();
+    let img = image::open(&config.input_path).unwrap();
     let new_img = touka::transparent(img, config.threshold);
     new_img.save(format!("{}.png", config.output_path)).unwrap();
 }
