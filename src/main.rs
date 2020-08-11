@@ -29,18 +29,12 @@ fn main() {
                 .takes_value(true),
         );
 
-    let (output, threshold) = touka::load_config_file();
-
     let matches = app.get_matches();
-    let input_path = matches.value_of("input_path").unwrap();
-    let output_path = matches.value_of("output_path").unwrap_or(&output);
-    let threshold = matches
-        .value_of("threshold")
-        .unwrap_or(&threshold)
-        .parse()
-        .unwrap();
 
-    let img = image::open(&input_path).unwrap().to_rgba();
-    let new_img = touka::transparent(img, threshold);
-    new_img.save(format!("{}.png", output_path)).unwrap();
+    let mut config = touka::Config::new();
+    config.set_cmdline_args(matches);
+
+    let img = image::open(&config.input_path).unwrap().to_rgba();
+    let new_img = touka::transparent(img, config.threshold);
+    new_img.save(format!("{}.png", config.output_path)).unwrap();
 }
