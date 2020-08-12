@@ -2,18 +2,16 @@
 extern crate clap;
 extern crate image;
 
+use anyhow::Result;
 use clap::{App, Arg};
 
-fn main() {
+#[tokio::main]
+async fn main() -> Result<()> {
     let app = App::new("touka")
         .about("Making the image background transparent.")
         .version(crate_version!())
         .author("moisutsu moisutsu@gmail.com")
-        .arg(
-            Arg::with_name("input_path")
-                .help("Input image path.")
-                .required(true),
-        )
+        .arg(Arg::with_name("input_path").help("Input image path."))
         .arg(
             Arg::with_name("output_path")
                 .help("Output image path.")
@@ -34,7 +32,9 @@ fn main() {
     let mut config = touka::Config::new();
     config.set_cmdline_args(matches);
 
-    let img = image::open(&config.input_path).unwrap();
+    let img = touka::load_image(&config).await?;
     let new_img = touka::transparent(img, config.threshold);
-    new_img.save(format!("{}.png", config.output_path)).unwrap();
+    touka::save_image(new_img, &config).await?;
+
+    Ok(())
 }
