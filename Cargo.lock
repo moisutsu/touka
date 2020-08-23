@@ -246,9 +246,9 @@ dependencies = [
 
 [[package]]
 name = "imboard"
-version = "0.2.3"
+version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce0f55f1c9dc331aa364d63e4b3a581cdb1a4220b1c492ebc3a8ae63506a14f8"
+checksum = "e2f75dfa590066c07b65a51ef91c06e644ee47909b0eb1f7c76653de9195204e"
 dependencies = [
  "anyhow",
  "image",
