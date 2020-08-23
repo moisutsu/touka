@@ -15,6 +15,6 @@ categories = ["command-line-utilities"]
 image = "0.23.5"
 clap = "2.33.1"
 yaml-rust = "0.4"
-imboard = "0.2.4"
+imboard = "0.2.5"
 anyhow = "1.0.32"
 tokio = { version = "0.2.22", features = ["full"] }
