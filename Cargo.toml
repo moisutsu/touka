@@ -1,10 +1,10 @@
 [package]
 name = "touka"
-version = "0.3.3"
+version = "0.3.4"
 authors = ["moisutsu <moisutsu@gmail.com>"]
 edition = "2018"
 license = "MIT"
-description = "Making the image background transparent."
+description = "This is a command-line tool for making image backgrounds transparent"
 readme = "README.md"
 repository = "https://github.com/moisutsu/touka"
 categories = ["command-line-utilities"]
