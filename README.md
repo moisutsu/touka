@@ -15,13 +15,13 @@ cargo install touka
 You can make an image with a transparent background by passing the image and output path as command line arguments of `touka`.
 
 ```bash
-touka input_image_path -o output_image_path
+touka input/image/path -o output/image/path
 ```
 
 Use `-t` to control the background detection threshold.
 
 ```bash
-touka input_image_path -o output_image_path -t 250
+touka input/image/path -o output/image/path -t 250
 ```
 
 When all three RGB colour values are above the threshold, that pixel will be

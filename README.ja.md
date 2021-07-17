@@ -15,13 +15,13 @@ cargo install touka
 背景を透過したい画像と出力先のパスを`touka`のコマンドライン引数で与えるだけで、背景を透過した画像をファイルとして出力します。
 
 ```bash
-touka input_image_path -o output_image_path
+touka input/image/path -o output/image/path
 ```
 
 またオプションとして、`-t`を使うことで白かどうかを判定するときに使うしきい値を指定できます。
 
 ```bash
-touka input_image_path -o output_image_path -t 250
+touka input/image/path -o output/image/path -t 250
 ```
 
 画素値 r, g, bがすべてしきい値以上のとき、その画素を透過します。デフォルトのしきい値は230です。
