@@ -2,7 +2,7 @@
 name = "touka"
 version = "0.3.4"
 authors = ["moisutsu <moisutsu@gmail.com>"]
-edition = "2018"
+edition = "2021"
 license = "MIT"
 description = "This is a command-line tool for making image backgrounds transparent"
 readme = "README.md"
