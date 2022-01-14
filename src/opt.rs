@@ -1,18 +1,18 @@
-use clap::{crate_authors, crate_description, crate_name, crate_version, Clap};
+use clap::Parser;
 use std::path::PathBuf;
 
-#[derive(Clap)]
-#[clap(version = crate_version!(), author = crate_authors!(), name=crate_name!(), about=crate_description!())]
+#[derive(Parser)]
+#[clap(author, version, about)]
 pub struct Opt {
-    #[clap(parse(from_os_str), about = "Input image path")]
+    #[clap(parse(from_os_str), help = "Input image path")]
     pub input_path: Option<PathBuf>,
-    #[clap(short, long, parse(from_os_str), about = "Output image path")]
+    #[clap(short, long, parse(from_os_str), help = "Output image path")]
     pub output_path: Option<PathBuf>,
     #[clap(
         short,
         long,
         default_value = "230",
-        about = "A threshold to determine if a color is white"
+        help = "A threshold to determine if a color is white"
     )]
     pub threshold: u8,
 }

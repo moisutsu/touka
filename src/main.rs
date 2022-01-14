@@ -1,5 +1,5 @@
 use anyhow::Result;
-use clap::Clap;
+use clap::Parser;
 
 use touka::{load_image, save_image, transparent, ImageLocation, Opt};
 
